@@ -1,0 +1,58 @@
+/* Basic responsive layout and CSS3 animations */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#6ee7b7;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef6;background:linear-gradient(180deg,#071029 0%, #0b1220 100%);}
+.container{max-width:1100px;margin:2rem auto;padding:1rem}
+.site-header{position:relative}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand{font-weight:700;letter-spacing:2px}
+.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.nav-links a{color:var(--muted);text-decoration:none}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:1.2rem}
+.banner{padding:4rem 2rem;text-align:center;color:white;background-image:linear-gradient(120deg, rgba(109,40,217,0.15), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+.banner-inner{max-width:800px;margin:0 auto}
+.name{font-size:2.2rem;margin:0}
+.role{color:var(--muted);margin:0.5rem 0}
+.cta{display:inline-block;margin-top:1rem;padding:0.6rem 1rem;border-radius:8px;background:var(--accent);color:#022; text-decoration:none;transform:translateY(0);transition:transform .2s ease, box-shadow .2s;box-shadow:0 6px 18px rgba(6,8,13,0.6)}
+.cta:hover{transform:translateY(-3px)}
+.grid.two-col{display:grid;grid-template-columns:320px 1fr;gap:1rem;margin-top:1.2rem}
+.card{background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.profile-card .photos{display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem}
+.profile-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,0.03);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.profile-card img:hover{transform:scale(1.05) rotate(-2deg)}
+.info-card .intro{color:var(--muted)}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.skill h4{margin:0 0 .4rem 0}
+.project{margin-bottom:.8rem;padding:.6rem;border-radius:6px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.contact-list{list-style:none;padding:0;margin:0}
+.site-footer{text-align:center;padding:1.2rem;color:var(--muted);opacity:0.9}
+
+/* Responsive */
+@media (max-width:900px){
+  .grid.two-col{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+}
+
+/* Subtle animations using CSS3 */
+@keyframes floatUp {
+  0%{transform:translateY(6px)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(6px)}
+}
+.banner-inner{animation:floatUp 6s ease-in-out infinite}
+
+/* Accessibility focus */
+a:focus{outline:3px dashed var(--accent);outline-offset:3px}
+
+/* small utilities */
+ul{margin:0}
+
+/* comments are added throughout to explain layout choices */
+/* The site uses CSS Grid for the main two-column layout and Flex for navbar alignment */
