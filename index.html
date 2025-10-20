@@ -66,46 +66,117 @@
         <div class="skills-grid">
           <div class="skill">
             <h4>Languages</h4>
-            <ul>
-              <li>Kotlin</li> — primary language</li>
-              <li>C++</li> — performance optimization</li>
-              <li>Dart</li> (Flutter)</li>
-            </ul>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Kotlin</span>
+                <span class="skill-level">90%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Dart (Flutter)</span>
+                <span class="skill-level">75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 75%"></div>
+              </div>
+            </div>
           </div>
           <div class="skill">
             <h4>Mobile & Frameworks</h4>
-            <ul>
-              <li>Android SDK, Jetpack, MVVM</li>
-              <li>Jetpack Compose</li>
-              <li>Flutter (hybrid app development)</li>
-              <li>Hilt, Retrofit, Coil, Glide, Coroutines</li>
-            </ul>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Android SDK, Jetpack</span>
+                <span class="skill-level">85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Jetpack Compose</span>
+                <span class="skill-level">80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Flutter</span>
+                <span class="skill-level">75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 75%"></div>
+              </div>
+            </div>
           </div>
           <div class="skill">
-            <h4>Build Systems & Repositories</h4>
-            <ul>
-              <li>Gradle</li>
-              <li>Maven (local repository & remote repositories)</li>
-              <li>Apache Ivy</li>
-            </ul>
+            <h4>Build Systems & Tools</h4>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Gradle</span>
+                <span class="skill-level">70%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Maven</span>
+                <span class="skill-level">65%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 65%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Git</span>
+                <span class="skill-level">80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 80%"></div>
+              </div>
+            </div>
           </div>
           <div class="skill">
-            <h4>Other / Tools</h4>
-            <ul>
-              <li>Shell scripting (bash, zsh)</li>
-              <li>Firebase, Room</li>
-              <li>Git, Android Studio, Flutter SDK</li>
-            </ul>
+            <h4>Other Technologies</h4>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Firebase</span>
+                <span class="skill-level">75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Shell Scripting</span>
+                <span class="skill-level">70%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="--progress-width: 70%"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="certs" class="card">
         <h2>Certificates & Awards</h2>
-        <ul>
-          <li><span class="highlight-alt">3rd prize</span> for excellent students in the province in information technology (2022)</li>
-          <li><span class="highlight-alt">3rd prize</span> for student olympic information technology students - specialized table (2023)</li>
-        </ul>
+        <div class="award-item">
+          <img src="assets/images/prize.jpg" alt="Award Certificate" class="award-image" onclick="openLightbox('assets/images/prize.jpg')">
+          <div class="award-text">
+            <p><span class="highlight-alt">3rd prize</span> for student olympic information technology students - specialized table (2023)</p>
+          </div>
+        </div>
       </section>
 
       <section id="projects" class="card">
@@ -113,17 +184,15 @@
         <article class="project">
           <h3>My Music App</h3>
           <p>Music player built with <span class="highlight">Jetpack Compose</span>, Room DB and Media3. Background playback and notification controls supported.</p>
+          
+          <div class="project-images">
+            <img src="assets/images/music1.jpg" alt="Music App Screenshot 1" class="project-image">
+            <img src="assets/images/music2.jpg" alt="Music App Screenshot 2" class="project-image">
+          </div>
+          
           <p><strong>Link:</strong> <a href="https://github.com/dinhphucaz2005/MUSIC-APP">MUSIC-APP</a></p>
         </article>
 
-      </section>
-
-      <section id="contact" class="card contact">
-        <h2>Contact</h2>
-        <p>Connect with me via:</p>
-        <ul>
-          <li><a href="https://github.com/dinhphucaz2005">GitHub</a></li>
-        </ul>
       </section>
     </main>
 
@@ -137,6 +206,12 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
+      <img id="lightbox-image" class="lightbox-content" src="" alt="Full size image">
+    </div>
 
     <script src="assets/js/script.js"></script>
   </body>

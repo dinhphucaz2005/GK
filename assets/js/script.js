@@ -36,6 +36,55 @@ document.addEventListener('DOMContentLoaded', function(){
       behavior: 'smooth'
     });
   });
+  
+  // Animate progress bars when they come into view
+  const observeProgressBars = () => {
+    const progressBars = document.querySelectorAll('.progress-fill');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    progressBars.forEach(bar => {
+      observer.observe(bar);
+    });
+  };
+  
+  // Initialize progress bar animation
+  observeProgressBars();
+});
+
+// Lightbox functionality
+function openLightbox(imageSrc) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  
+  lightboxImage.src = imageSrc;
+  lightbox.classList.add('active');
+  
+  // Prevent body scrolling when lightbox is open
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  
+  // Restore body scrolling
+  document.body.style.overflow = 'auto';
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
 });
 
 /* Parallax: scroll-based background offset and mouse-based subtle movement */

@@ -117,6 +117,120 @@ html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Seg
   font-weight: 600;
 }
 
+/* Progress bars for skills */
+.skill-item {
+  margin-bottom: 1rem;
+}
+.skill-name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+.skill-level {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.progress-bar {
+  height: 8px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-purple) 100%);
+  border-radius: 4px;
+  transition: width 1.5s ease-out;
+  width: 0;
+}
+.progress-fill.animate {
+  width: var(--progress-width);
+}
+
+/* Awards section styling */
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-orange);
+}
+.award-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.award-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(110, 231, 183, 0.3);
+}
+.award-text {
+  flex: 1;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+.lightbox.active .lightbox-content {
+  transform: scale(1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.lightbox-close:hover {
+  background: var(--accent);
+  color: var(--card);
+}
+
 /* Highlight key terms */
 .highlight {
   color: var(--accent);
@@ -152,6 +266,39 @@ html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Seg
   color: var(--accent-pink);
   text-decoration: underline;
 }
+
+/* Project preview images */
+.project-images {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.project-image {
+  width: 120px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.project-image:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Responsive project images */
+@media (max-width: 600px) {
+  .project-images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-image {
+    width: 100px;
+    height: 200px;
+  }
+}
+
 .contact-list{list-style:none;padding:0;margin:0}
 .site-footer{text-align:center;padding:1.2rem;color:var(--muted);opacity:0.9}
 
