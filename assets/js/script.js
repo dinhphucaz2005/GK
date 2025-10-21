@@ -16,6 +16,49 @@ document.addEventListener('DOMContentLoaded', function(){
       if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     })
   })
+
+  // Text animation effects
+  function addTextAnimations() {
+    // Add bounce effect to all card titles when they come into view
+    const cardTitles = document.querySelectorAll('.card h2, .card h3, .card h4');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'none';
+          setTimeout(() => {
+            entry.target.style.animation = 'slideInBounce 0.8s ease-out forwards';
+          }, 10);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    cardTitles.forEach(title => observer.observe(title));
+
+    // Add typing effect to role text
+    const roleElement = document.querySelector('.role');
+    if (roleElement) {
+      const originalText = roleElement.textContent;
+      roleElement.textContent = '';
+      roleElement.style.opacity = '1';
+      
+      setTimeout(() => {
+        let i = 0;
+        const typeInterval = setInterval(() => {
+          roleElement.textContent = originalText.slice(0, i + 1);
+          i++;
+          if (i >= originalText.length) {
+            clearInterval(typeInterval);
+          }
+        }, 50);
+      }, 1500);
+    }
+
+    // Letter hover effects removed to prevent color changes
+  }
+
+  // Initialize text animations
+  setTimeout(addTextAnimations, 100);
   
   // Move to top button
   const moveToTopBtn = document.getElementById('move-to-top');
